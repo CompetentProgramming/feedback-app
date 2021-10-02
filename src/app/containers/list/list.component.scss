@@ -1,0 +1,38 @@
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.feedback {
+  background: white;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: [first] 50px [main] auto [last] 50px;
+}
+
+.upvotes {
+  grid-column: first / main;
+  grid-row: 1 / 4;
+  text-align: center;
+}
+
+h3 {
+  grid-column: main / last;
+}
+
+.description {
+  grid-column: main / last;
+}
+
+.category {
+  grid-column: main / last;
+}
+
+.comments-count {
+  grid-column: last / last;
+  grid-row: 1 / 4;
+  align-self: center;
+  text-align: center;
+}
