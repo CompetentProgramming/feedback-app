@@ -4,6 +4,25 @@ export const currentUser = {
   "userName": "velvetround"
 }
 
+export const sortByOptions = [
+  {
+    value: 1,
+    label: 'Most Upvotes'
+  },
+  {
+    value: 2,
+    label: 'Least Upvotes'
+  },
+  {
+    value: 3,
+    label: 'Most Comments'
+  },
+  {
+    value: 4,
+    label: 'Least Comments'
+  },
+]
+
 export const feedbackMockJson = [
   {
     "id": 1,
@@ -173,7 +192,8 @@ export const feedbackMockJson = [
     "category": "bug",
     "upvotes": 3,
     "status": "suggestion",
-    "description": "Challenge preview images are missing when you apply a filter."
+    "description": "Challenge preview images are missing when you apply a filter.",
+    "comments": []
   },
   {
     "id": 7,
@@ -266,7 +286,8 @@ export const feedbackMockJson = [
     "category": "bug",
     "upvotes": 9,
     "status": "in-progress",
-    "description": "Screenshots of solutions with animations don’t display correctly."
+    "description": "Screenshots of solutions with animations don’t display correctly.",
+    "comments": []
   },
   {
     "id": 12,

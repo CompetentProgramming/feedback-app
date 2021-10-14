@@ -1,8 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;600;800&display=swap');
-@import url('app/styles/fonts.scss');
+@import 'app/styles/fonts';
+@import 'app/styles/buttons';
+@import 'app/styles/icons';
+@import 'app/styles/variables';
 
 * {
   font: 400 16px/23px 'Jost', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: $primary;
+}
+
+strong {
+  font-weight: 700;
 }
 
 body {
@@ -14,4 +26,51 @@ body {
 
 .d-flex {
   display: flex;
+}
+
+.filter {
+  .ng-select {
+    .ng-arrow-wrapper .ng-arrow {
+      background: url("data:image/svg+xml, #{$arrow-up-white}") no-repeat;
+      width: 10px;
+      height: 6px;
+    }
+    &.ng-select-single .ng-select-container .ng-value-container .ng-value .ng-value-label {
+      font-weight: 700;
+      font-size: 14px;
+    }
+    .ng-dropdown-panel {
+      background: #fff;
+      border-radius: 10px;
+      width: 255px;
+      margin-left: -50px;
+      .ng-dropdown-panel-items .ng-option {
+        padding: 12px 24px;
+        border-bottom: 1px solid rgba($color: #3A4374, $alpha: .15);
+        position: relative;
+        &:last-child {
+          border-bottom: 0;
+        }
+        .ng-option-label {
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 23px;
+          color: $primaryLight;
+          transition: all .2s;
+          &:hover {
+            color: $buttonFeedback;
+          }
+        }
+        &.ng-option-selected::after {
+          content: '';
+          width: 13px;
+          height: 10px;
+          background: url("data:image/svg+xml, #{$arrow-check}") no-repeat;
+          position: absolute;
+          top: 15px;
+          right: 25px;
+        }
+      }
+    }
+  }
 }

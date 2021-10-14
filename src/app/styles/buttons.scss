@@ -1,0 +1,36 @@
+@import "./variables.scss";
+
+.btn {
+  height: 44px;
+  line-height: 44px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 14px;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  padding: 0 25px;
+  display: block;
+  color: #fff;
+
+}
+
+.btn-purple {
+  color: #fff;
+  background: $buttonFeedback;
+  transition: all .2s;
+  &:hover {
+    background: $buttonFeedbackHover;
+  }
+}
+
+.btn-category {
+  height: 30px;
+  line-height: 30px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: capitalize;
+  padding: 0 15px;
+  color: $primaryHover;
+  background: $greyLight;
+}

@@ -15,6 +15,16 @@ export class FeedbackEffects {
       )
   ));
 
+  loadSortByOptions$ = createEffect(() => this.actions$.pipe(
+    ofType('[Feedbacks] Get Sort By Options'),
+    mergeMap(() => this.feedbackService.getSortOptions()
+      .pipe(
+        map(listSortOptions => ({type: '[Feedbacks] Get Sort By Options Success', options: listSortOptions})),
+        catchError(() => EMPTY))
+      )
+  ));
+
+
 
   constructor(
     private actions$: Actions,

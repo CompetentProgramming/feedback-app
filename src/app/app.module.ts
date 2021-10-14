@@ -15,6 +15,8 @@ import * as fromFeedback from './state/feedback.reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { HttpClientModule } from '@angular/common/http';
 import { EffectsModule } from '@ngrx/effects';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { EffectsModule } from '@ngrx/effects';
       autoPause: true, // Pauses recording actions and state changes when the extension window is not open
     }),
     EffectsModule.forRoot([FeedbackEffects]),
-    HttpClientModule
+    HttpClientModule,
+    NgSelectModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

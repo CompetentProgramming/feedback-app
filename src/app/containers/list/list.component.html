@@ -1,15 +1,28 @@
-<ul>
+<ul class="list">
   <li *ngFor="let feedback of feedbackList" class="feedback">
     <div class="upvotes">
-      <button>{{ feedback.upvotes }}</button>
+      <button>
+        <i class="icon"></i>
+        {{ feedback.upvotes }}
+      </button>
     </div>
-    <h3>{{ feedback.title }}</h3>
-    <p class="description">
-      {{ feedback.description }}
-    </p>
-    <span class="comments-count">{{ feedback.comments?.length }}</span>
-    <p class="category">
-      {{ feedback.category }}
-    </p>
+    <div class="center">
+      <h3 class="title">
+        <a>{{ feedback.title }}</a>
+      </h3>
+      <p class="description">
+        {{ feedback.description }}
+      </p>
+      <p class="category">
+        <button class="btn btn-category">
+          {{ feedback.category }}
+        </button>
+      </p>
+    </div>
+    <span class="comments-count">
+      <span class="comment-icon"></span>
+      <strong class="count">{{ feedback.comments?.length }}</strong>
+    </span>
+
   </li>
 </ul>

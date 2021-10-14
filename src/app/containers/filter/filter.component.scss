@@ -1,0 +1,31 @@
+@import '/src/app/styles/variables.scss';
+@import '/src/app/styles/buttons.scss';
+
+.filter {
+  background: $primaryDark;
+  border-radius: 10px;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px 0 24px;
+}
+
+.sort-block {
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.total-suggestion {
+  color: #fff;
+  flex-flow: row nowrap;
+  align-items: center;
+  margin-right: 38px;
+  svg {
+    margin-right: 16px;
+  }
+}
+
+.sort-by {
+  flex-flow: row nowrap;
+  color: $grey;
+}

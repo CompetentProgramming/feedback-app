@@ -1,5 +1,7 @@
+@import "/src/app/styles/icons";
+@import "/src/app/styles/variables";
 
-ul {
+.list {
   list-style-type: none;
   padding: 0;
 }
@@ -9,13 +11,50 @@ ul {
   margin-bottom: 20px;
   border-radius: 10px;
   display: grid;
-  grid-template-columns: [first] 50px [main] auto [last] 50px;
+  grid-template-columns: [first] 104px [main] auto [last] 90px;
+  padding: 0 0 23px;
+  &:hover {
+    .title a {
+      color: $primaryHover;
+    }
+  }
 }
 
 .upvotes {
   grid-column: first / main;
   grid-row: 1 / 4;
-  text-align: center;
+  justify-self: center;
+  padding-top: 23px;
+  button {
+    min-width: 43px;
+    height: 53px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    border: 0;
+    background: $grey;
+    transition: all .2s;
+    font-size: 13px;
+    line-height: 19px;
+    font-weight: 700;
+    letter-spacing: -.18px;
+    padding: 18px 0 0;
+    border-radius: 10px;
+    i {
+      width: 10px;
+      height: 6px;
+      background: url("data:image/svg+xml, #{$arrow-up-blue}") no-repeat;
+      display: inline-block;
+      position: absolute;
+      top: 12px;
+    }
+    &:hover {
+      background: $btnUpvoteHover;
+    }
+  }
 }
 
 h3 {
@@ -24,6 +63,8 @@ h3 {
 
 .description {
   grid-column: main / last;
+  color: $primaryLight;
+  margin-bottom: 11px;
 }
 
 .category {
@@ -34,5 +75,32 @@ h3 {
   grid-column: last / last;
   grid-row: 1 / 4;
   align-self: center;
-  text-align: center;
+  align-items: center;
+  display: flex;
+  margin: 26px 0 0 12px;
+  .comment-icon {
+    background: url("data:image/svg+xml, #{$comment}") no-repeat;
+    width: 18px;
+    height: 16px;
+    display: inline-block;
+    margin-right: 12px;
+  }
+  .count {
+    color: $primary;
+  }
+}
+
+.center {
+  padding: 18px 0 0 9px;
+}
+
+.title {
+  margin-bottom: 0;
+  a {
+    font-size: 18px;
+    line-height: 26px;
+    letter-spacing: -.25px;
+    font-weight: 700;
+    transition: all .2s;
+  }
 }
