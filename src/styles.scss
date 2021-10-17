@@ -74,3 +74,27 @@ body {
     }
   }
 }
+
+.categories {
+  .mat-button-toggle-group-appearance-standard {
+    .mat-button-toggle {
+      transition: all .2s;
+      margin: 0 14px 14px 0;
+      padding: 0;
+      &.mat-button-toggle-checked {
+        color: #fff;
+        background: $primaryHover;
+      }
+      &:hover {
+        background: $btnUpvoteHover;
+      }
+    }
+    .mat-button-toggle-label-content {
+      line-height: 30px;
+      padding: 0;
+    }
+    .mat-button-toggle-button {
+      padding: 0 16px;
+    }
+  }
+}

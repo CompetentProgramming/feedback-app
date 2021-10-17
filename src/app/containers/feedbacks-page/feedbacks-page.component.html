@@ -1,5 +1,8 @@
 <section class="d-flex">
-  <aside class="sidebar">feedback board</aside>
+  <aside class="sidebar">
+    <app-categories-filter></app-categories-filter>
+    <app-roadmap></app-roadmap>
+  </aside>
   <section class="main-column">
     <app-filter></app-filter>
     <app-list [feedbackList]="(feedbacksSuggestion$ | async)!"></app-list>

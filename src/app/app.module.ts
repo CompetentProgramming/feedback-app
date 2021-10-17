@@ -17,6 +17,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { EffectsModule } from '@ngrx/effects';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { FormsModule } from '@angular/forms';
+import { CategoriesFilterComponent } from './containers/categories-filter/categories-filter.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { RoadmapComponent } from './components/roadmap/roadmap.component';
+import { RoadmapPageComponent } from './containers/roadmap-page/roadmap-page.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +29,10 @@ import { FormsModule } from '@angular/forms';
     FeedbacksPageComponent,
     FilterComponent,
     ListComponent,
-    FeedbackComponent
+    FeedbackComponent,
+    CategoriesFilterComponent,
+    RoadmapComponent,
+    RoadmapPageComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +46,9 @@ import { FormsModule } from '@angular/forms';
     EffectsModule.forRoot([FeedbackEffects]),
     HttpClientModule,
     NgSelectModule,
-    FormsModule
+    FormsModule,
+    NoopAnimationsModule,
+    MatButtonToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,3 +1,5 @@
+import { CategoryEnum } from './../models/enums.model';
+import { KeyStringNumber } from './../models/data.model';
 import { createSelector } from "@ngrx/store";
 import { StatusEnum } from "../models/enums.model";
 import { IFeedback } from "../models/feedback.model";
@@ -20,6 +22,12 @@ export const selectFeedbacksLoading = createSelector(
   (state: State) => state.loading
 );
 
+export const selectActiveCategories = createSelector(
+  selectRoot,
+  (state: State) => state.activeCategories
+);
+
+
 export const selectSortBySelectedOption = createSelector(
   selectRoot,
   (state: State) => state.sortBySelectedOption
@@ -30,8 +38,19 @@ export const selectFeedbackSuggestions = createSelector(
   (list: IFeedback[]) =>  list.filter(feedback => feedback.status === StatusEnum.SUGGESTION)
 );
 
-export const selectSuggestionsSorted = createSelector(
+export const selectFeedbacksFiltered = createSelector(
   selectFeedbackSuggestions,
+  selectActiveCategories,
+  (list: IFeedback[], activeCategories: string[]) => {
+    if (activeCategories.length === 1 && activeCategories[0] === CategoryEnum.ALL) {
+      return list;
+    }
+    return list.filter(feedback => activeCategories.some(activeCategory => activeCategory === feedback.category));
+  }
+);
+
+export const selectSuggestionsSorted = createSelector(
+  selectFeedbacksFiltered,
   selectSortBySelectedOption,
   (list: IFeedback[], sortBy: number) => {
     return list.sort((a,b) => {
@@ -53,3 +72,16 @@ export const selectFeedbackSuggestionsLength = createSelector(
   selectFeedbackSuggestions,
   (list: IFeedback[]) => list.length
 );
+
+export const getRoadmapWidgetItems = createSelector(
+  selectFeedbacks,
+  (list: IFeedback[]) => {
+    return list
+      .filter(feedback => feedback.status !== StatusEnum.SUGGESTION)
+      .reduce<KeyStringNumber>((acc, cur) => {
+        cur.status in acc ? acc[cur.status]++ : acc[cur.status] = 1;
+
+        return acc;
+      }, {})
+  }
+)

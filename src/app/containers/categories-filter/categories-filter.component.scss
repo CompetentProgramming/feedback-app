@@ -1,0 +1,14 @@
+.categories {
+  background: #fff;
+  border-radius: 10px;
+  padding: 24px 24px 10px;
+  margin-bottom: 24px;
+  .mat-button-toggle-group-appearance-standard {
+    display: flex;
+    flex-flow: row wrap;
+    border: 0;
+    .mat-button-toggle + .mat-button-toggle {
+      border: 0;
+    }
+  }
+}

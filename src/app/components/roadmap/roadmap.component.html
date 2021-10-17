@@ -1,0 +1,20 @@
+<section class="roadmap-widget">
+  <div class="title-block d-flex">
+    <h3>Roadmap</h3>
+    <a class="link" routerLink="../roadmap">View</a>
+  </div>
+  <ul *ngIf="roadmapWidgetItems$ | async as roadmapItems">
+    <li class="d-flex planned">
+      <span>{{ feedbackStatusEnum.PLANNED }}</span>
+      <strong>{{ roadmapItems[feedbackStatusEnum.PLANNED] }}</strong>
+    </li>
+    <li class="d-flex in-progress">
+      <span>{{ feedbackStatusEnum.INPROGRESS }}</span>
+      <strong>{{ roadmapItems[feedbackStatusEnum.INPROGRESS] }}</strong>
+    </li>
+    <li class="d-flex live">
+      <span>{{ feedbackStatusEnum.LIVE }}</span>
+      <strong>{{ roadmapItems[feedbackStatusEnum.LIVE] }}</strong>
+    </li>
+  </ul>
+</section>

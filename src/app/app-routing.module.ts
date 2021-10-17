@@ -1,10 +1,13 @@
+import { RoadmapPageComponent } from './containers/roadmap-page/roadmap-page.component';
 import { FeedbacksPageComponent } from './containers/feedbacks-page/feedbacks-page.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  {path: '', component: FeedbacksPageComponent, pathMatch: 'full'},
-  {path: '**', redirectTo: ''}
+  {path: 'feedback', component: FeedbacksPageComponent},
+  {path: 'roadmap', component: RoadmapPageComponent,},
+  {path: '', redirectTo: '/feedback', pathMatch: 'full'},
+  {path: '**', redirectTo: '/feedback'}
 ];
 
 @NgModule({

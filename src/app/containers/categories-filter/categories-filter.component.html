@@ -1,0 +1,12 @@
+<section class="categories">
+  <mat-button-toggle-group multiple [value]="activeCategories$ | async">
+    <mat-button-toggle
+    *ngFor="let category of categories"
+    (change)="categoryChange($event)"
+    [value]="category.value"
+    class="btn btn-category"
+    >
+      {{ category.label }}
+    </mat-button-toggle>
+  </mat-button-toggle-group>
+</section>

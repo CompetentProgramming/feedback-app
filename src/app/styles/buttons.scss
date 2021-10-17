@@ -34,3 +34,14 @@
   color: $primaryHover;
   background: $greyLight;
 }
+
+.link {
+  color: $primaryHover;
+  font-weight: 600;
+  font-size: 13px;
+  text-decoration: underline;
+  transition: all .2s;
+  &:hover {
+    color: $linkHover;
+  }
+}

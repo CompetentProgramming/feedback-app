@@ -11,3 +11,5 @@ export const getSortByOptionsSuccess = createAction('[Feedbacks] Get Sort By Opt
 export const getSortByOptionsError = createAction('[Feedbacks] Get Sort By Options Error');
 
 export const sortBySelected = createAction('[Feedbacks] Sort By Select',props<{ value: number }>());
+
+export const categorySelected = createAction('[Feedbacks] Category Selected',props<{ selectedCategory: string }>());
