@@ -106,6 +106,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "fb-yt:build:production",
+            "firebaseProject": "feedback-app-e5f6d",
+            "firebaseHostingSite": "feedback-app-e5f6d"
+          }
         }
       }
     }

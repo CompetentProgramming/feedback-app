@@ -1,3 +1,4 @@
+import { AuthService } from './../../services/auth.service';
 import { SelectOption } from './../../models/data.model';
 import { Component } from '@angular/core';
 import { select, Store } from '@ngrx/store';
@@ -17,13 +18,17 @@ export class FilterComponent {
 
   sortBySelect = 1;
 
-  constructor(private store: Store<State>) {
+  constructor(private store: Store<State>, private authService: AuthService) {
     this.totalSuggestion$ = this.store.pipe(select(selectFeedbackSuggestionsLength));
     this.sortOptions$ = this.store.pipe(select(selectSortOptions));
   }
 
   sortBySelected(option: SelectOption) {
     this.store.dispatch(sortBySelected({value: option.value}));
+  }
+
+  logout() {
+    this.authService.logout();
   }
 
 }

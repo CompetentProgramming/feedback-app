@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "feedback-app-e5f6d": {
+      "hosting": {
+        "fb-yt": [
+          "feedback-app-e5f6d"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "feedback-app-e5f6d"
+  }
+}

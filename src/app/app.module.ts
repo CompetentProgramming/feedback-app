@@ -1,5 +1,4 @@
 import { FeedbackEffects } from './state/feedback.effects';
-import { environment } from './../environments/environment.prod';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -22,6 +21,11 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { RoadmapComponent } from './components/roadmap/roadmap.component';
 import { RoadmapPageComponent } from './containers/roadmap-page/roadmap-page.component';
+import { LoginComponent } from './containers/login/login.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { AuthenticatedGuard } from './guards/authenticated.guard';
 
 @NgModule({
   declarations: [
@@ -32,7 +36,8 @@ import { RoadmapPageComponent } from './containers/roadmap-page/roadmap-page.com
     FeedbackComponent,
     CategoriesFilterComponent,
     RoadmapComponent,
-    RoadmapPageComponent
+    RoadmapPageComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -48,9 +53,13 @@ import { RoadmapPageComponent } from './containers/roadmap-page/roadmap-page.com
     NgSelectModule,
     FormsModule,
     NoopAnimationsModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth())
   ],
-  providers: [],
+  providers: [
+    AuthenticatedGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

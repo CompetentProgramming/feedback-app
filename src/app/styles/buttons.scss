@@ -1,4 +1,4 @@
-@import "./variables.scss";
+@import "./variables";
 
 .btn {
   height: 44px;
@@ -43,5 +43,36 @@
   transition: all .2s;
   &:hover {
     color: $linkHover;
+  }
+}
+
+.btn-login {
+  color: $primary;
+  background: $greyLight;
+  border: 1px solid $btnUpvoteHover;
+  padding: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  transition: all .2s;
+  &.btn-google:hover {
+    background: #DB4437;
+    color: #fff;
+    border-color: #DB4437;
+  }
+  &.btn-twitter:hover {
+    background: #1DA1F2;
+    color: #fff;
+    border-color: #1DA1F2;
+  }
+}
+
+.btn-logout {
+  color: $primaryHover;
+  background: $greyLight;
+  transition: all .2s;
+  opacity: .8;
+  &:hover {
+    opacity: 1;
   }
 }
